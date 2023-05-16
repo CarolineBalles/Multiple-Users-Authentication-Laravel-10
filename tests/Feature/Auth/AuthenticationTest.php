@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Models\User\User;
 use App\Providers\RouteServiceProvider;
 
 test('login screen can be rendered', function () {
@@ -18,7 +18,7 @@ test('users can authenticate using the login screen', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(RouteServiceProvider::HOME);
+    $response->assertRedirect(RouteServiceProvider::USER_HOME);
 });
 
 test('users can not authenticate with invalid password', function () {
